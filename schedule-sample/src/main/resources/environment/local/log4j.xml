@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+	<!-- 控制台输出 -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%l [%t] - %m%n" />
+			<!-- <param name="ConversionPattern" value="%d - %c [%t] %-5p %x %l - %m%n" /> -->
+		</layout>
+	</appender>
+
+	<!-- 业务日志输出 -->
+	<appender name="sampleFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="logs/sample.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd-HH" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d - %c [%t] %-5p %x %l - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="INFO" />
+		</filter>
+	</appender>
+
+	<logger name="java.sql" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="sampleFile" />
+	</logger>
+	<logger name="com.apache.ibatis" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="sampleFile" />
+	</logger>
+
+	<logger name="java.sql.Connection" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="sampleFile" />
+	</logger>
+
+	<logger name="java.sql.Statement" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="sampleFile" />
+	</logger>
+
+	<logger name="java.sql.PreparedStatement" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="sampleFile" />
+	</logger>
+
+	<logger name="org.springframework" additivity="false">
+		<level value="ERROR" />
+		<appender-ref ref="sampleFile" />
+	</logger>
+
+	<root>
+		<level value="DEBUG" />
+		<appender-ref ref="console" />
+		<appender-ref ref="sampleFile" />
+	</root>
+
+</log4j:configuration>
