@@ -3,7 +3,6 @@ package com.lede.tech.workflow.util;
 import org.apache.commons.lang.StringUtils;
 /**
  * @Description:字符串工具类,主要功能是字符串空的判断，字符串大写等等
- * @author xlzhu
  * @date 2015年9月2日 下午3:11:07
  * @version 1.0
  */

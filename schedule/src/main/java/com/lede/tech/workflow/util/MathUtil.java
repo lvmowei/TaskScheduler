@@ -9,7 +9,6 @@ import org.apache.commons.lang.StringUtils;
 /**
  * 数学计算的Util
  * 
- * @author xliao
  * 
  */
 public class MathUtil

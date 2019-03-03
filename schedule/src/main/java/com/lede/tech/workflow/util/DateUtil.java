@@ -15,7 +15,6 @@ import org.apache.commons.logging.LogFactory;
 /**
  * 对按指定格式对日期进行转换
  *
- * @author zhaogang
  *
  */
 public class DateUtil
@@ -658,7 +657,6 @@ public class DateUtil
 		}
 	}
 	/**
-	 * @author wangmeng
 	 * 比较两个时间，if: firstDate before nextDate return true;
 	 *  else: return true;
 	 * @param firstDate
@@ -988,7 +986,6 @@ public class DateUtil
 			return dispDate;
 	}
 	/**
-	  * @author: zhuxuli 
 	  * @Description: 获取当前天凌晨，六点等时间的Timestamp
 	  * @return ：Timestamp    
 	  * @throws
@@ -1020,7 +1017,6 @@ public class DateUtil
 		return new Timestamp(date.getTime());
 	}
 	/**
-	  * @author: zhuxuli 
 	  * @Description: 获取当前天凌晨，六点等时间的Timestamp
 	  * @return ：Timestamp    
 	  * @throws
